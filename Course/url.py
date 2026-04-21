@@ -5,6 +5,8 @@ app_name = 'course'
 
 urlpatterns = [
     path('course/<int:course_id>/', views.course_details, name='course_details'),
-    path('course/<int:course_id>/lesson/<int:lesson_id>/submit/', views.submit_exam, name='submit_exam'),
-    path('course/<int:course_id>/submission/<int:submission_id>/result/', views.show_exam_results, name='show_exam_results'),
+    # Correct path: 'submit' not 'submit_exam'
+    path('course/<int:course_id>/submit/', views.submit, name='submit'),
+    # Correct path format with submission_id
+    path('course/<int:course_id>/submission/<int:submission_id>/result/', views.show_exam_result, name='show_exam_result'),
 ]
